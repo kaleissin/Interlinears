@@ -2,7 +2,7 @@
 
 from distutils.core import setup
 
-README_FILE = open('README.txt')
+README_FILE = open('README.rst', 'rt')
 try:
     long_description = README_FILE.read()
 finally:
@@ -16,6 +16,7 @@ setup(name='Interlinears',
         author_email='kaleissin@gmail.com',
         author='kaleissin',
         long_description=long_description,
+        url='https://github.com/kaleissin/Interlinears',
         classifiers=[
                 'Development Status :: 4 - Beta',
                 'Environment :: Web Environment',
