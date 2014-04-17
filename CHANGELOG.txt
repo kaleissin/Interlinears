@@ -1,0 +1,16 @@
+Changelog
+=========
+
+0.2
+---
+ * Moved django-support to new app ``django-linguistics``
+ * Now assumes sanitized input, does not attempt to escape HTML
+ * Python 3-support
+ * Makefile
+ * Modernized unit tests, collected in one file
+ * More unit tests
+ * Testing with tox
+
+0.1
+---
+ * First version on PyPI
