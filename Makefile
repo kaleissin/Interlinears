@@ -1,6 +1,8 @@
 SHELL := /bin/sh
 
-LOCALPATH := .
+LOCALPATH := ./src
+PYTHONPATH := $(LOCALPATH)/
+PYTHON_BIN := PYTHONPATH=$(PYTHONPATH) $(VIRTUAL_ENV)/bin
 
 .PHONY: clean cleanall coverage register sdist showenv test upload
 
@@ -23,10 +25,10 @@ cleanall: clean
 	-rm -rf .tox
 
 test: clean
-	-coverage run interlinears/tests.py
+	-$(PYTHON_BIN)/coverage run $(LOCALPATH)/interlinears/tests.py
 
 coverage:
-	coverage html --include="$(LOCALPATH)/*" --omit="*/test*"
+	$(PYTHON_BIN)/coverage html --include="$(LOCALPATH)/*" --omit="*/test*"
 
 register:
 	python setup.py register
